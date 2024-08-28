@@ -1,0 +1,27 @@
+@if (data) {
+  <div class="w-[90vmin] h-[50vmin]">
+    <table class="mt-5" width="100%">
+      <thead>
+      <tr class="text-emerald-400 text-xl">
+        <th>Year</th>
+        <th>Investment Value</th>
+        <th>Interest Year</th>
+        <th>Total Interest</th>
+        <th>Invested Capital</th>
+      </tr>
+      </thead>
+      <tbody  class="text-center text-lg">
+        @for (record of results; track record.year) {
+          <tr>
+            <td>{{record.year}}</td>
+            <td>{{record.valueEndOfYear | currency: 'EUR' }}</td>
+            <td>{{record.interest | currency: 'EUR'}}</td>
+            <td>{{record.totalAmountInvested | currency: 'EUR'}}</td>
+            <td>{{record.totalAmountInvested | currency: 'EUR'}}</td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+}
+
